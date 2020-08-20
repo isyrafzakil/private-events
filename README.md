@@ -1,4 +1,4 @@
-# Mini Reddit
+# Private Events (Mini EventBrite Clone)
 
 Play with Association
 
