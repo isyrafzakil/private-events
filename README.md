@@ -1,24 +1,13 @@
-# README
+# Mini Reddit
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Play with Association
 
-Things you may want to cover:
+## Built With
+* Ruby on Rails
 
-* Ruby version
+### Written by 
+```
+Isyraf Zakil
+```
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[THE ODIN PROJECT: ASSOCIATION](https://www.theodinproject.com/courses/ruby-on-rails/lessons/associations)
