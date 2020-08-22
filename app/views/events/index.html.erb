@@ -1,14 +1,14 @@
-<h1> View All Users Here </h1>
+<h1> View All Events Here </h1>
 
 
 <div class="createNewEvent">
     <button><%= link_to 'Create New Event', new_event_path %> </button>
 </div>
 
-<ul id="users">
-	<% @users.each do |user| %>
+<ul id="events">
+	<% @events.each do |event| %>
 		<li>
-			<%= user.username %>
+			<%= link_to event.title, event_path(event) %>
 		</li>
 	<% end %>
 </ul>
