@@ -1,8 +1,23 @@
 <h1>Events Created by <%= @user.username %></h1>
 
-<ul id="events">
-	<% if @events.present? %>
-		<% @events.each do |event| %>
+<ul id="created_events">
+	<% if @created_events.present? %>
+		<% @created_events.each do |event| %>
+			<li>
+				<%= event.title %>
+			</li>
+		<% end %>
+	<% end %>
+</ul>
+
+
+<br> <br>
+
+<h1>Events Attended by <%= @user.username %></h1>
+
+<ul id="attended_events">
+	<% if @attended_events.present? %>
+		<% @attended_events.each do |event| %>
 			<li>
 				<%= event.title %>
 			</li>

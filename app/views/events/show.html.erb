@@ -1,3 +1,28 @@
 <h1> <%= @event.title %> </h1> <h3> Event by <%= @event.creator.username %>
 <p> <%= @event.description %> </p>
+
+
+<h2> Attendees </h2>
+
+<% if @event.attendance? %>
+	<ul id="attendees">
+		<% @event.attendees.each do |attendee| %>
+			<li>
+				<%= attendee.username %>
+			</li>
+		<% end %>
+	</ul>
+<% else %>
+	No attendance
+<% end %>
+
+<br><br>
+
+<% if @event.attendee?(@current_user) %>
+	<%= link_to 'Unattend Event', {:action => :remove_attendee}, :method => :delete, data: { disable_with: "Waiting..." }, class: "btn btn-danger mt-4"%>
+<% else %>
+    <%= link_to 'Attend Event', {:action => :add_attendee}, :method => :post, data: { disable_with: "Waiting..." }, class: "btn btn-primary mt-4" %>
+<% end %>
+
+<br><br><br><br>
 <%= link_to "<< Events List", events_path %>

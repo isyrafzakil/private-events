@@ -1,12 +1,21 @@
 Rails.application.routes.draw do
+  get 'event_attendances/index'
+  get 'event_attendances/show'
+
   devise_for :users
+
 	root to: 'users#index'
+
 	resources :users
-	resources :events
-  # get 'users/new'
-  # get 'users/create'
-  # get 'users/show'
-  # get 'events/new'
-  # post 'events', to: "events#create", as: :events
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  resources :events
+	resources :events, only: [:index, :show] do
+    member do
+      post 'events/:id/add_attendee', to: "events#add_attendee"
+      delete 'events/:id/remove_attendee', to: "events#remove_attendee"
+    end
+  end
+
+  resources :event_attendances
+  
 end
